@@ -7,20 +7,22 @@ import {
   FlatList,
   ScrollView,
   SafeAreaView,
+  TouchableOpacity,
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import firestore from '@react-native-firebase/firestore';
 import {useIsFocused} from '@react-navigation/core';
+import back from '../../asset/back.png';
 
-const Item = ({nama,jabatan}) => (
+const Item = ({nama, jabatan}) => (
   <View style={styles.item}>
-		<Text style={styles.title}>{jabatan}</Text>
-    <Text style={styles.title}>{nama}</Text>		
+    <Text style={styles.title}>{jabatan}</Text>
+    <Text style={styles.title}>{nama}</Text>
   </View>
 );
 
-const Staff = () => {
+const Staff = ({navigation}) => {
   const isFocused = useIsFocused();
   const [data, setData] = useState([]);
 
@@ -48,7 +50,9 @@ const Staff = () => {
   const cek = () => {
     console.log(data);
   };
-  const renderItem = ({item}) => <Item nama={item.nama} jabatan={item.jabatan} />;
+  const renderItem = ({item}) => (
+    <Item nama={item.nama} jabatan={item.jabatan} />
+  );
   // const ContentThatGoesAboveTheFlatList=(
 
   // 	)
@@ -59,11 +63,14 @@ const Staff = () => {
       style={{flex: 1, alignItems: 'center'}}>
       <SafeAreaView style={{flex: 1}}>
         <View style={{flex: 1}}>
-          <Text style={styles.Text}>ANGGOTA</Text>
-          <Text style={styles.Text}>DIR BINMAS</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+            <Image source={back} style={{height: 75, width: 75}} />
+          </TouchableOpacity>
+          <Text style={styles.Text}> DATA ANGGOTA</Text>
         </View>
         <SafeAreaView style={{flex: 1}}>
           <FlatList
+            style={{marginTop: -150}}
             data={data}
             renderItem={renderItem}
             keyExtractor={item => item.id}
@@ -80,14 +87,18 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: '400',
     top: 50,
+    left: 100,
   },
   item: {
-    backgroundColor: '#f9c2ff',
-    padding: 30,
-    marginVertical: 8,
-    marginHorizontal: 16,
+    height: 65,
+    width: 225,
+    marginVertical: 10,
+    marginHorizontal: 100,
+    backgroundColor: 'grey',
   },
   title: {
-    fontSize: 32,
+    fontSize: 25,
+    left: 30,
+    color: 'black',
   },
 });
