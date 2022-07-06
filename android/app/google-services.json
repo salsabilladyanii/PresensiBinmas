@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "142921211136",
+    "project_id": "presensibinmas",
+    "storage_bucket": "presensibinmas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:142921211136:android:9e89989cbca227ea4ae7e5",
+        "android_client_info": {
+          "package_name": "com.presensibinmas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "142921211136-8l01tbq86o5sgq63svgu0rcspf9m582k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.presensibinmas",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "142921211136-eun8sraj2ofi82ttmhofoq1cgs3k8vc5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjkuZDJk2ywcxbkBUeLq1TX9EOI5vUVZo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "142921211136-eun8sraj2ofi82ttmhofoq1cgs3k8vc5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
