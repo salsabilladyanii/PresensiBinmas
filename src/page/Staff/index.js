@@ -13,9 +13,10 @@ import LinearGradient from 'react-native-linear-gradient';
 import firestore from '@react-native-firebase/firestore';
 import {useIsFocused} from '@react-navigation/core';
 
-const Item = ({title}) => (
+const Item = ({nama,jabatan}) => (
   <View style={styles.item}>
-    <Text style={styles.title}>{title}</Text>
+		<Text style={styles.title}>{jabatan}</Text>
+    <Text style={styles.title}>{nama}</Text>		
   </View>
 );
 
@@ -47,7 +48,7 @@ const Staff = () => {
   const cek = () => {
     console.log(data);
   };
-  const renderItem = ({item}) => <Item title={item.nama} />;
+  const renderItem = ({item}) => <Item nama={item.nama} jabatan={item.jabatan} />;
   // const ContentThatGoesAboveTheFlatList=(
 
   // 	)
